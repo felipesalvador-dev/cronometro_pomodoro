@@ -5,6 +5,9 @@ import { Logo } from "./components/Logo"
 import { Menu } from "./components/Menu"
 import { Count } from "./components/CountDown"
 import { DefaultInput } from "./components/DefaultInput"
+import { Cycles } from "./components/Cycle"
+import { DefaultButton } from "./components/DefaultButton"
+import { CirclePlay, CircleStop } from "lucide-react"
 
 function App() {
 
@@ -21,16 +24,14 @@ function App() {
       <Container>
         <form className="form" action="">
         <div className="formRow">
-          <DefaultInput labelText= 'label' id="meuInput" type="text"/>
+          <DefaultInput labelText= 'Inserir Tempo ⏱️' id="meuInput" type="text"/>
         </div>
         <div className="formRow">
-          <p>escrever do formulario</p>
+          <Cycles/>
         </div>
         <div className="formRow">
-          <p>0 0 0 0 0 0 0 0 0 </p>
-        </div>
-        <div className="formRow">
-          <button>Enviar</button>
+          <DefaultButton icon = {<CirclePlay/>} color="green"/>
+          <DefaultButton icon = {<CircleStop/>} color="red" />
         </div>
         </form>
       </Container>
