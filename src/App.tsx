@@ -7,14 +7,26 @@ import { Count } from "./components/CountDown"
 import { DefaultInput } from "./components/DefaultInput"
 import { Cycles } from "./components/Cycle"
 import { DefaultButton } from "./components/DefaultButton"
+import { Heading } from "./components/Heading"
 import { CirclePlay, CircleStop } from "lucide-react"
+import { useState } from "react"
 
-function App() {
+export function App() {
+  
+  const [numero, setNumero] = useState(0)
+  
 
-
+  function handleClick(){
+    setNumero(estadoAnterior => estadoAnterior + 1)  
+  }
   return (
     <>
+      <Heading>
+        Número: <span id='numero'>{numero}</span>
+      </Heading>
+      <button onClick={handleClick}>Aumenta</button>
       <Container>
+        <Heading>0</Heading>
         <Logo />
         <Menu/>
       </Container>
